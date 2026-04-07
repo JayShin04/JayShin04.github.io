@@ -3,6 +3,8 @@ description: "보안, 개발 기록"
 url: "https://jayshin04.github.io"
 baseurl: ""
 
+timezone: Asia/Seoul
+
 author:
   name: "Jay Shin"
   github: "JayShin04"
