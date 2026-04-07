@@ -1,0 +1,37 @@
+---
+layout: default
+title: Posts
+---
+
+<div class="container">
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">all posts</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="posts-list">
+      {% for post in site.posts %}
+        {% assign color = "teal" %}
+        {% if post.category == "개발" %}{% assign color = "blue" %}
+        {% elsif post.category == "CTF/Wargame" %}{% assign color = "red" %}
+        {% elsif post.category == "BugBounty" %}{% assign color = "amber" %}
+        {% elsif post.category == "블로그/기술문서" %}{% assign color = "teal" %}
+        {% elsif post.category == "논문/컨퍼런스" %}{% assign color = "purple" %}
+        {% elsif post.category == "공모전/자격증" %}{% assign color = "green" %}
+        {% endif %}
+        <a href="{{ post.url }}" class="post-item">
+          <span class="post-title">{{ post.title }}</span>
+          <span class="post-tag tag-{{ color }}">{{ post.category }}</span>
+          <span class="post-date">{{ post.date | date: "%Y.%m.%d %H:%M" }}</span>
+        </a>
+      {% endfor %}
+
+      {% if site.posts.size == 0 %}
+      <div style="padding: 3rem 0; text-align:center; font-family: var(--mono); font-size: 13px; color: var(--text-muted);">
+        // 아직 작성된 글이 없습니다.
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</div>

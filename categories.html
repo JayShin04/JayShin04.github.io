@@ -1,0 +1,54 @@
+---
+layout: default
+title: Categories
+---
+
+<div class="container">
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">categories</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="categories-grid">
+      <a href="/category/dev" class="cat-card" data-color="blue">
+        <div class="cat-name">개발</div>
+        <div class="cat-count">{{ site.posts | where: "category", "개발" | size }} posts</div>
+      </a>
+      <a href="/category/ctf" class="cat-card" data-color="red">
+        <div class="cat-name">CTF / Wargame</div>
+        <div class="cat-count">{{ site.posts | where: "category", "CTF/Wargame" | size }} posts</div>
+      </a>
+      <a href="/category/bugbounty" class="cat-card" data-color="amber">
+        <div class="cat-name">Bug Bounty</div>
+        <div class="cat-count">{{ site.posts | where: "category", "BugBounty" | size }} posts</div>
+      </a>
+      <a href="/category/docs" class="cat-card" data-color="teal">
+        <div class="cat-name">블로그 / 기술문서</div>
+        <div class="cat-count">{{ site.posts | where: "category", "블로그/기술문서" | size }} posts</div>
+      </a>
+      <a href="/category/research" class="cat-card" data-color="purple">
+        <div class="cat-name">논문 / 컨퍼런스</div>
+        <div class="cat-count">{{ site.posts | where: "category", "논문/컨퍼런스" | size }} posts</div>
+      </a>
+      <a href="/category/cert" class="cat-card" data-color="green">
+        <div class="cat-name">공모전 / 자격증</div>
+        <div class="cat-count">{{ site.posts | where: "category", "공모전/자격증" | size }} posts</div>
+      </a>
+      <a href="/category/junk" class="cat-card" data-color="green">
+        <div class="cat-name">잡글</div>
+        <div class="cat-count">{{ site.posts | where: "category", "잡글" | size }} posts</div>
+      </a>
+      {% assign main_categories = "개발,CTF/Wargame,BugBounty,블로그/기술문서,논문/컨퍼런스,공모전/자격증,잡글" | split: "," %}
+      {% assign all_cats = site.posts | map: "category" | uniq %}
+      {% for cat in all_cats %}
+        {% unless main_categories contains cat %}
+        <a href="/category/{{ cat | slugify }}" class="cat-card" data-color="teal">
+          <div class="cat-name">{{ cat }}</div>
+          <div class="cat-count">{{ site.posts | where: "category", cat | size }} posts</div>
+        </a>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </section>
+</div>

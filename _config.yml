@@ -1,0 +1,24 @@
+title: "JayShin04"
+description: "보안, 개발 기록"
+url: "https://jayshin04.github.io"
+baseurl: ""
+
+author:
+  name: "Jay Shin"
+  github: "JayShin04"
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: "post"
+      permalink: /posts/:title/
+
+exclude: ["README.md", "Gemfile", "Gemfile.lock"]

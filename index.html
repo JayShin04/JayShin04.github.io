@@ -1,0 +1,103 @@
+---
+layout: default
+title: Home
+---
+
+<div class="container">
+    <!-- PROFILE -->
+    <section class="profile">
+    <div class="profile-card">
+        <div class="profile-left">
+        <h2 class="profile-name">JayShin</h2>
+        <p class="profile-bio">기록장</p>
+        </div>
+        <div class="profile-contacts">
+        <a href="mailto:jewon0640@gmail.com" class="contact-btn" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://instagram.com/jecircle0_0" class="contact-btn" title="Instagram" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://github.com/JayShin04" class="contact-btn" title="GitHub" target="_blank">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        </div>
+    </div>
+    </section>
+
+    <!-- RECENT POSTS -->
+    <div class="section-header">
+      <span class="section-label">recent posts</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="posts-list">
+      {% for post in site.posts limit: 5 %}
+        {% assign color = "teal" %}
+        {% if post.category == "개발" %}{% assign color = "blue" %}
+        {% elsif post.category == "CTF/Wargame" %}{% assign color = "red" %}
+        {% elsif post.category == "BugBounty" %}{% assign color = "amber" %}
+        {% elsif post.category == "블로그/기술문서" %}{% assign color = "teal" %}
+        {% elsif post.category == "논문/컨퍼런스" %}{% assign color = "purple" %}
+        {% elsif post.category == "공모전/자격증" %}{% assign color = "green" %}
+        {% endif %}
+        <a href="{{ post.url }}" class="post-item">
+        <div class="post-item-left">
+            <span class="post-title">{{ post.title }}</span>
+            <span class="post-tag tag-{{ color }}">{{ post.category }}</span>
+            <span class="post-date">{{ post.date | date: "%Y.%m.%d %H:%M" }}</span>
+        </div>
+        {% if post.image %}
+        <div class="post-item-thumb">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+        </a>
+      {% endfor %}
+
+      {% if site.posts.size == 0 %}
+      <div style="padding: 3rem 0; text-align:center; font-family: var(--mono); font-size: 13px; color: var(--text-muted);">
+        아직 작성된 글이 없습니다.
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="section-header" style="margin-top: 3rem;">
+      <span class="section-label">categories</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="categories-grid">
+      <a href="/category/dev" class="cat-card" data-color="blue">
+        <div class="cat-name">개발</div>
+        <div class="cat-count">{{ site.posts | where: "category", "개발" | size }} posts</div>
+      </a>
+      <a href="/category/ctf" class="cat-card" data-color="red">
+        <div class="cat-name">CTF / Wargame</div>
+        <div class="cat-count">{{ site.posts | where: "category", "CTF/Wargame" | size }} posts</div>
+      </a>
+      <a href="/category/bugbounty" class="cat-card" data-color="amber">
+        <div class="cat-name">Bug Bounty</div>
+        <div class="cat-count">{{ site.posts | where: "category", "BugBounty" | size }} posts</div>
+      </a>
+      <a href="/category/docs" class="cat-card" data-color="teal">
+        <div class="cat-name">블로그 / 기술문서</div>
+        <div class="cat-count">{{ site.posts | where: "category", "블로그/기술문서" | size }} posts</div>
+      </a>
+      <a href="/category/research" class="cat-card" data-color="purple">
+        <div class="cat-name">논문 / 컨퍼런스</div>
+        <div class="cat-count">{{ site.posts | where: "category", "논문/컨퍼런스" | size }} posts</div>
+      </a>
+      <a href="/category/cert" class="cat-card" data-color="green">
+        <div class="cat-name">공모전 / 자격증</div>
+        <div class="cat-count">{{ site.posts | where: "category", "공모전/자격증" | size }} posts</div>
+      </a>
+      <a href="/category/junk" class="cat-card" data-color="grey">
+        <div class="cat-name">잡글</div>
+        <div class="cat-count">{{ site.posts | where: "category", "공모전/자격증" | size }} posts</div>
+      </a>
+    </div>
+
+  </section>
+</div>
