@@ -353,3 +353,53 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent);
   border-color: var(--accent);
 }
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-logo {
+    font-size: 15px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .profile-contacts {
+    align-self: flex-end;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .post-item-thumb {
+    width: 50px;
+    height: 50px;
+  }
+
+  .post-title {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
