@@ -318,7 +318,7 @@ a { color: inherit; text-decoration: none; }
 .post-toc {
   position: fixed;
   top: 7rem;
-  right: max(2rem, calc((100vw - 1120px) / 2));
+  right: max(1rem, calc((100vw - 1320px) / 2));
   width: 190px;
   max-height: calc(100vh - 9rem);
   overflow-y: auto;
@@ -479,7 +479,7 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1320px) {
   .post-toc {
     display: none;
   }
