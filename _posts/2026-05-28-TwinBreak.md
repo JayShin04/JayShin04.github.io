@@ -21,6 +21,12 @@ category: 논문/컨퍼런스
 최근 LLM은 우리의 일상속에 완전히 자리잡았다고 할 수 있다. 번역, 코드 생성, 문서 작성, 각종 궁금증 해결 등 다양한 분야에서 사용되고 있다. 하지만 LLM이 위험한 요청에 대해 답변할 수 있다면, 피싱 이메일 작성, 악성 행위 지원, 위험한 정보 제공 같은 방식으로 악용될 가능성이 있다. <br><br>
 심지어 오픈소스 LLM이 늘어나는 상황속에서, 모델을 직접 다운로드해서 실행할 수 있다면 white-box threat model이 단순한 가정이 아닌 실제 상황이 올 수도 있다는 생각 때문이었다.
 
+## 0-3. 핵심 요약
+
+이 논문은 LLM의 safety alignment가 단순히 프롬프트로만 우회되는 것이 아니라, 모델 내부 파라미터 수준에서도 약화될 수 있음을 보여준다. 저자들은 harmful prompt와 harmless prompt를 거의 같은 구조로 만든 TwinPrompt를 사용해 모델 내부 activation 차이를 비교하고, safety mechanism과 관련된 parameter를 찾아 pruning하는 TwinBreak를 제안한다. <br>
+
+내가 보기에 이 논문의 핵심 기여는 jailbreak 성공률 자체보다, LLM의 안전장치가 모델 내부에서 분리 가능한 취약점처럼 분석될 수 있음을 보였다는 점이다. 특히 오픈소스 LLM이 늘어나는 상황에서는 외부 필터만으로는 충분하지 않고, safety alignment가 모델 내부에 더 강하게 통합되어야 한다는 문제의식을 던진다.
+
 ---
 
 # 1. Introduction
@@ -61,6 +67,7 @@ white-box 방식 또한 계산 비용이 크거나, 모델의 일반 성능을 �
 ## [이 섹션에 대한 생각]
 safety alignment를 우회하는 jailbreak 기법으로는 프롬프트에 의존하는 black-box기법에 대해서만 생각을 하고 있었는데, 처음에는 white-box 기법에 대해 소개할 필요가 있을까 싶었다. <br>
 하지만 오픈 소스 LLM이 확산되는 상황에서는 white-box threat model이 아예 불가능한 것이 아니라는 생각이 들게 되었다. <br>
+정리하면, 이 논문은 "LLM이 위험한 답변을 할 수 있다"는 문제를 넘어서, "모델 내부에 학습된 safety alignment가 white-box 환경에서도 충분히 견고한가" 를 묻는 논문이라고 볼 수 있다. <br>
 
 ---
 
@@ -118,6 +125,7 @@ TwinBreak의 핵심 관점은 LLM의 safety alignment를 backdoor와 유사하�
 이 점에서 TwinBreak는 더 근본적인 위협을 보여주는 논문이라고 생각한다. 특히 safety alignment를 backdoor처럼 해석한 관점이 흥미로웠다. 원래 safety alignment는 모델을 보호하기 위한 기능이지만, 저자들은 이를 특정 입력에 의해 활성화되는 내부 기능이라는 구조적 관점에서 분석한다. 이 비유가 완전히 증명된 것은 아니지만, harmful prompt와 harmless prompt의 activation 차이를 비교한다는 방법론으로 이어진다는 점에서 설득력이 있다.<br><br>
 
 다만 twin prompt를 수작업으로 구성한다는 점은 한계로 이어질 수 있다고 생각한다. 두 prompt가 "충분히 유사하다"고 판단하는 기준이 완전히 객관적이지 않을 수 있기 때문이다. 따라서 후속 연구에서는 twin prompt의 유사성을 자동으로 측정하거나, 다양한 언어와 도메인에서 같은 방식이 작동하는지 확인하는 과정이 필요해 보인다.<br><br>
+정리하면, 기존 방법들이 safety alignment를 우회하거나 넓게 조작하는 방식이었다면, TwinBreak는 twin prompt를 이용해 safety-related signal을 더 좁혀서 찾으려 한다는 점에서 차별적이다.
 
 ---
 
@@ -187,6 +195,8 @@ TwinBreak의 방법론에서 가장 인상적인 부분은 twin prompt를 사용
 
 다만 twin prompt를 수작업으로 만든다는 점은 한계로 이어질 수 있다. 두 prompt가 충분히 유사한지 판단하는 기준이 주관적일 수 있고, 영어가 아닌 다른 언어나 다른 도메인에서도 같은 방식이 잘 작동하는지는 추가 검증이 필요해 보인다.<br><br>
 
+결국 TwinBreak의 핵심은 "비슷한 두 입력의 차이"를 이용해 safety 매커니즘과 일반 기능을 최대한 분리하려는 데 있다. 이 점이 단순 pruning과 가장 큰 차이라고 생각한다.
+
 ---
 
 # 4. Results
@@ -219,11 +229,9 @@ StrongREJECT에 대해서는 별도의 evaluator를 사용했으며, 이 evaluat
 
 ## 4-4. 주요 결과: 높은 ASR
 
-실험 결과, TwinBreak는 여러 모델과 데이터셋에서 높은 ASR을 보였다. 예를 들어 HarmBench validation 기준으로 LLaMA 2 7B는 pruning 5회 이후 94% ASR을 보였고, LLaMA 3.1 8B는 99%, Gemma 2 9B는 94%, Qwen 2.5 7B는 97% ASR을 보였다.<br><br>
+실험 결과, TwinBreak는 여러 모델과 데이터셋에서 높은 ASR을 보였다. 대표적으로 HarmBench validation 기준으로 LLaMA 2 7B는 94%, LLaMA 3.1 8B는 99%, Qwen 2.5 7B는 97% ASR을 보였다. <br><br>
 
-AdvBench에서도 비슷한 경향이 나타났다. LLaMA 2 7B는 94.62%, LLaMA 3.1 8B는 98.08%, Gemma 2 9B는 92.12%, Qwen 2.5 7B는 98.27% ASR을 보였다. JailbreakBench에서도 대부분 높은 ASR을 유지했다.<br><br>
-
-StrongREJECT에서는 binary ASR 대신 평균 score를 사용했는데, pruning 이후 LLaMA 2 7B는 0.702, LLaMA 3.1 8B는 0.805, Gemma 2 9B는 0.683, Qwen 2.5 7B는 0.794를 기록했다. 이는 TwinBreak가 단순히 refusal을 피하는 데 그치지 않고, evaluator 기준으로도 harmful response를 생성하게 만들었다는 의미로 해석된다.<br><br>
+AdvBench와 JailbreakBench에서도 비슷하게 높은 ASR을 보였고, StrongREJECT에서도 높은 평균 점수를 기록했다. 이는 TwinBreak가 단순히 refusal을 피하는 데 그치지 않고, 여러 평가 기준에서 safety alignment를 약화시키는 효과를 보였다는 의미로 해석할 수 있다. <br><br>
 
 ## 4-5. 일반화 성능
 
@@ -261,6 +269,15 @@ LLaMA 2 7B 기준으로 TwinBreak는 HarmBench, JailbreakBench, AdvBench, Strong
 
 저자들은 이를 통해 TwinBreak가 기존 방식보다 더 빠르고, 더 높은 ASR을 보이며, utility 손상도 상대적으로 작다고 주장한다. 특히 twin prompt를 사용해 safety-related parameter를 더 정밀하게 찾는 점이 기존 방식과의 차이라고 설명한다.<br><br>
 
+
+| 평가 관점 | 확인한 내용 | 결과 해석 |
+|:---:|:---|:---|
+| 공격 성공률 | HarmBench, AdvBench, JailbreakBench, StrongREJECT에서 ASR 측정 | 여러 모델에서 높은 ASR을 보여 safety alignment가 약화됨 |
+| 일반화 | TwinPrompt에 없는 unseen prompt로 평가 | 특정 prompt 암기가 아니라 safety mechanism 자체가 약화되었을 가능성 |
+| 모델 범위 | LLaMA, Gemma, Qwen, Mistral, DeepSeek 등 16개 모델 사용 | 특정 모델에만 의존하지 않는다고 주장 |
+| Utility | OpenBookQA, ARC-Challenge, HellaSwag 등으로 일반 성능 평가 | 일부 성능 저하는 있지만 비교적 제한적 |
+| 비교 실험 | Directional Ablation, Set Difference와 비교 | TwinBreak가 더 빠르고 높은 성능을 보였다고 보고 |
+
 ## [이 섹션에 대한 생각]
 
 Results에서 가장 중요한 점은 TwinBreak가 단순히 특정 prompt에만 성공한 것이 아니라 여러 dataset과 여러 model에서 높은 ASR을 보였다는 것이다. 특히 unseen prompt에서도 높은 성공률을 보인 점은 safety mechanism 자체가 약화되었을 가능성을 뒷받침한다.<br><br>
@@ -268,15 +285,8 @@ Results에서 가장 중요한 점은 TwinBreak가 단순히 특정 prompt에만
 또한 utility 평가를 함께 수행한 점도 중요하다. Jailbreak 공격이 성공하더라도 모델이 완전히 망가진 상태라면 의미가 줄어든다. TwinBreak는 utility parameter exclusion과 50-token inference strategy를 통해 모델의 일반 성능 손상을 줄이려 했다는 점에서, 단순한 pruning 공격보다 더 정교한 접근으로 보인다.<br><br>
 
 다만 평가가 LlamaGuard3나 StrongREJECT evaluator 같은 자동 평가기에 의존한다는 점은 한계로 볼 수 있다. 자동 평가기는 편리하지만, 실제 harmfulness를 완벽히 판단한다고 보기 어렵다. 따라서 사람 평가나 더 다양한 평가 기준이 추가되면 결과의 신뢰성이 더 높아질 수 있을 것 같다.<br><br>
+따라서 실험 결과의 핵심은 단순히 ASR이 높다는 것이 아니라, TwinBreak가 여러 모델과 unseen prompt에서도 작동해 safety mechanism 자체를 약화시켰을 가능성을 보였다는 점이다.
 
-
-| 평가 항목 | 저자의 결과 해석 |
-|:-----:|:------:|
-| ASR | 여러 모델과 데이터셋에서 높은 공격 성공률을 보임 |
-| Generalization | TwinPrompt에 없는 unseen prompt에도 효과가 나타남 |
-| Utility | pruning 이후 일부 성능 저하는 있으나 비교적 제한적 |
-| Runtime | 기존 white-box 방법보다 빠른 실행 시간 |
-| Ablation | twin prompt, utility exclusion, iterative pruning이 성능에 중요 |
 
 ---
 
@@ -376,6 +386,35 @@ TwinBreak는 LLM safety alignment의 취약성을 보여준다는 점에서 보�
 TwinBreak는 LLM safety alignment가 모델 내부에서 어떻게 취약해질 수 있는지를 보여주는 논문이다. 이 논문을 통해 LLM 안전성은 단순히 출력 결과를 필터링하는 문제가 아니라, 모델 내부 구조와 학습된 parameter 수준에서 함께 고민해야 하는 문제라는 점을 배웠다.<br><br>
 
 앞으로 LLM이 더 널리 사용될수록 안전장치의 중요성은 더 커질 것이다. 따라서 단순히 jailbreak를 막는 수준을 넘어, safety alignment가 모델 내부에서 더 강건하게 유지될 수 있는 방법을 연구하는 것이 필요하다고 생각한다.<br><br>
+
+## 6-6. 용어정리
+
+| 용어 | 설명 |
+|:---:|:------------------------------|
+| LLM | Large Language Model의 약자로, 대규모 텍스트 데이터를 학습한 언어 모델이다. ChatGPT 같은 모델이 대표적인 예시이다. |
+| Safety Alignment | 모델이 위험하거나 부적절한 요청에 대해 답하지 않도록 학습시키는 안전 정렬 과정이다. 쉽게 말해, 위험한 질문에 “답할 수 없다”고 거절하게 만드는 장치이다. |
+| Harmful Prompt | 모델이 답변하면 위험할 수 있는 요청이다. 예를 들어 불법 행위, 악성 행위, 위험한 정보 생성을 요구하는 프롬프트가 여기에 해당한다. |
+| Harmless Prompt | 위험하지 않은 일반적인 요청이다. TwinBreak에서는 harmful prompt와 구조는 비슷하지만 안전한 내용의 prompt를 의미한다. |
+| Jailbreak | LLM이 원래 거절해야 할 요청에 답하도록 safety alignment를 우회하거나 약화시키는 공격이다. |
+| Black-box | 모델 내부 구조나 파라미터를 볼 수 없고, 입력과 출력만 확인할 수 있는 상황이다. 일반적인 API 기반 LLM 사용 환경이 여기에 가깝다. |
+| White-box | 모델 내부 구조, 파라미터, activation 등을 볼 수 있는 상황이다. 오픈소스 LLM을 직접 다운로드해 분석하는 경우가 대표적이다. |
+| Parameter | 모델이 학습 과정에서 얻은 내부 값이다. 모델의 판단과 응답 생성에 영향을 주는 구성 요소라고 볼 수 있다. |
+| Activation | 입력이 들어왔을 때 모델 내부에서 나타나는 반응값이다. 이 논문에서는 harmful prompt와 harmless prompt가 모델 내부에서 얼마나 다르게 반응하는지 보기 위해 사용된다. |
+| Activation Difference | 두 입력을 넣었을 때 모델 내부 반응값이 얼마나 다른지를 나타낸 것이다. TwinBreak는 이 차이를 이용해 safety 관련 parameter를 찾는다. |
+| Pruning | 모델의 특정 parameter나 neuron을 제거하거나 비활성화하는 방법이다. 이 논문에서는 safety alignment와 관련된 parameter를 약화시키기 위해 사용된다. |
+| Utility | 모델의 일반적인 성능을 의미한다. 예를 들어 질문에 답하기, 문장 이해하기, 추론하기 같은 기본 능력을 말한다. |
+| Utility Parameter | 모델의 일반 성능을 유지하는 데 중요한 parameter이다. TwinBreak는 이 부분을 제거하지 않도록 따로 보호한다. |
+| ASR | Attack Success Rate의 약자로, harmful prompt에 대해 모델이 거절하지 않고 답변한 비율을 의미한다. |
+| TwinPrompt | harmful prompt와 harmless prompt를 거의 같은 문장 구조로 만든 prompt 쌍이다. TwinBreak에서 safety 관련 activation 차이를 찾기 위해 사용된다. |
+| Backdoor | 특정 trigger가 들어왔을 때 모델이 평소와 다른 출력을 내도록 만드는 숨겨진 동작이다. 이 논문에서는 safety alignment를 backdoor와 비슷한 구조로 해석한다. |
+| Refusal Response | 모델이 위험한 요청에 대해 “도와줄 수 없다”는 식으로 거절하는 응답이다. |
+| Fine-tuning | 이미 학습된 모델을 특정 목적에 맞게 추가로 학습시키는 과정이다. |
+| Decoder-only Transformer | GPT 계열 LLM에서 많이 쓰이는 구조로, 이전 token들을 바탕으로 다음 token을 순차적으로 예측하는 방식의 모델 구조이다. |
+| MLP Layer | Transformer 내부에서 정보를 변환하고 처리하는 부분 중 하나이다. 이 논문에서는 MLP의 Gate와 Up layer가 pruning 대상으로 사용된다. |
+| Gate Layer | MLP 내부에서 어떤 정보가 다음 단계로 흘러갈지 조절하는 역할을 하는 부분이다. |
+| Up Layer | MLP 내부에서 표현의 차원을 확장해 더 풍부한 정보를 처리하도록 하는 부분이다. |
+| Down Layer | 확장된 표현을 다시 원래 크기로 줄이는 부분이다. TwinBreak에서는 기본 pruning 대상에서 제외된다. |
+| Unseen Prompt | pruning이나 학습에 사용되지 않은 새로운 prompt이다. 논문에서는 TwinBreak가 unseen prompt에도 작동하는지 평가한다. |
 
 ---
 
