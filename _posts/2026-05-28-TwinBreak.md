@@ -64,10 +64,7 @@ white-box 방식 또한 계산 비용이 크거나, 모델의 일반 성능을 �
 이 논문은 이러한 한계를 해결하기 위해 TwinBreak를 제안한다. 저자들은 LLM의 safety alignment를 특정 harmful input에 의해 활성화되는 backdoor-like mechanism으로 보고, 해로운 프롬프트와 해롭지 않은 프롬프트의 activation 차이를 비교하여 safety 관련 파라미터를 식별한다. <br>
 특히 두 prompt가 문법 구조와 내용 면에서 최대한 유사하도록 구성된 twin prompt를 사용함으로써, safety mechanism과 관련된 activation 차이를 더 정밀하게 찾고자 한다. <br>
 
-## [이 섹션에 대한 생각]
-safety alignment를 우회하는 jailbreak 기법으로는 프롬프트에 의존하는 black-box기법에 대해서만 생각을 하고 있었는데, 처음에는 white-box 기법에 대해 소개할 필요가 있을까 싶었다. <br>
-하지만 오픈 소스 LLM이 확산되는 상황에서는 white-box threat model이 아예 불가능한 것이 아니라는 생각이 들게 되었다. <br>
-정리하면, 이 논문은 "LLM이 위험한 답변을 할 수 있다"는 문제를 넘어서, "모델 내부에 학습된 safety alignment가 white-box 환경에서도 충분히 견고한가" 를 묻는 논문이라고 볼 수 있다. <br>
+정리하면, 이 논문은 "LLM이 위험한 답변을 할 수 있다"는 문제를 넘어서 "모델 내부에 학습된 안전 장치가 white-box 환경에서도 견고한가"를 묻는 논문이라고 볼 수 있다. <br>
 
 ---
 
@@ -100,16 +97,6 @@ TwinBreak는 harmful prompt와 harmless prompt의 비교하는 방식에 차별�
 TwinBreak의 핵심 관점은 LLM의 safety alignment를 backdoor와 유사하게 보는 것이다. Backdoor는 특정 trigger가 들어왔을 때 모델이 평소와 다른 출력을 내도록 만드는 숨겨진 기능이다.
 이 관점에서 harmful prompt는 safety mechanism을 작동시키는 trigger처럼 볼 수 있다.<br>
 이러한 관점에서 저자들은 backdoor defense에서 사용되던 targeted pruning 아이디어를 LLM safety alignment 제거에 적용한다. Harmful prompt와 harmless twin prompt를 각각 입력하고, 두 입력의 activation difference가 큰 파라미터를 safety-related parameter 후보로 본다. 이후 모델의 일반 기능에 중요한 utility parameter를 제외한 뒤 pruning한다.<br><br>
-
-정리하면, 기존 방법들이 safety alignment를 우회하거나 넓게 조작하는 방식이었다면, TwinBreak는 Twin prompt를 이용하여 safety-related signal을 더 좁혀서 찾으려 한다는 점에서 차별적이다.
-
-## [이 섹션에 대한 생각]
-
-기존 jailbreak 연구를 살펴보면, 단순히 프롬프트를 조작하는 방식과 모델 내부를 직접 수정하는 방식 사이에 큰 차이가 있다는 점이 드러난다. Black-box jailbreak는 특정 입력에서 모델을 속이는 방식에 가깝지만, white-box model manipulation은 모델 내부의 safety alignment 자체를 약화시키려는 방식이다.<br><br>
-
-이 점에서 TwinBreak는 더 근본적인 위협을 보여주는 논문이라고 생각한다. 특히 safety alignment를 backdoor처럼 해석한 관점이 흥미로웠다. 원래 safety alignment는 모델을 보호하기 위한 기능이지만, 저자들은 이를 특정 입력에 의해 활성화되는 내부 기능이라는 구조적 관점에서 분석한다. 이 비유가 완전히 증명된 것은 아니지만, harmful prompt와 harmless prompt의 activation 차이를 비교한다는 방법론으로 이어진다는 점에서 설득력이 있다.<br><br>
-
-다만 twin prompt를 수작업으로 구성한다는 점은 한계로 이어질 수 있다고 생각한다. 두 prompt가 "충분히 유사하다"고 판단하는 기준이 완전히 객관적이지 않을 수 있기 때문이다. 따라서 후속 연구에서는 twin prompt의 유사성을 자동으로 측정하거나, 다양한 언어와 도메인에서 같은 방식이 작동하는지 확인하는 과정이 필요해 보인다.<br><br>
 
 ---
 
@@ -152,15 +139,7 @@ TwinBreak는 pruning된 모델만으로 전체 응답을 생성하지 않는다.
 
 이 전략은 safety refusal이 주로 응답 초기에 발생한다는 관찰에 기반한다. 모델이 처음에 거절하면 끝까지 거절 흐름으로 가지만, 처음에 pruned model로, 안전장치가 약화된 모델로 시작하고 난 뒤엔 일반 답변으로 시작한다면 원래 모델로 바꾸어도 거절 흐름이 켜질 가능성이 적다고 보는 것이다. 또한, 일반적으로 가지고 있는 모델의 성능도 지켜질 수 있다고 보는 것이다. <br><br>
 
-## [이 섹션에 대한 생각]
 
-TwinBreak의 방법론에서 가장 인상적인 부분은 twin prompt를 사용해 activation difference의 원인을 최대한 통제하려 한 점이다. 단순히 harmful prompt와 harmless prompt를 비교하면 주제 차이, 문장 구조 차이, 단어 차이가 모두 섞일 수 있다. 하지만 twin prompt는 두 입력의 구조를 비슷하게 맞추고 safety 여부만 다르게 만들어 safety-related signal을 더 잘 분리하려 한다.<br><br>
-
-또한 utility parameter를 따로 식별해 pruning 대상에서 제외하는 점도 중요하다고 생각한다. 이 과정이 없다면 모델이 harmful prompt를 거절하지 않게 될 수는 있지만, 동시에 일반적인 답변 능력도 크게 망가질 수 있다. 따라서 TwinBreak는 단순히 모델을 망가뜨리는 것이 아니라, safety alignment와 utility를 분리하려는 시도라고 볼 수 있다.<br><br>
-
-다만 twin prompt를 수작업으로 만든다는 점은 한계로 이어질 수 있다. 두 prompt가 충분히 유사한지 판단하는 기준이 주관적일 수 있고, 영어가 아닌 다른 언어나 다른 도메인에서도 같은 방식이 잘 작동하는지는 추가 검증이 필요해 보인다.<br><br>
-
-결국 TwinBreak의 핵심은 "비슷한 두 입력의 차이"를 이용해 safety 매커니즘과 일반 기능을 최대한 분리하려는 데 있다. 이 점이 단순 pruning과 가장 큰 차이라고 생각한다.
 
 ---
 
@@ -213,15 +192,7 @@ TwinBreak가 안전장치를 지우려다가 일반 성능까지 손상시키면
 | Utility | OpenBookQA, ARC-Challenge, HellaSwag 등으로 일반 성능 평가 | 일부 성능 저하는 있지만 비교적 제한적 |
 | 비교 실험 | Directional Ablation, Set Difference와 비교 | TwinBreak가 더 빠르고 높은 성능을 보였다고 보고 |
 
-## [이 섹션에 대한 생각]
 
-Results에서 가장 중요한 점은 TwinBreak가 단순히 특정 prompt에만 성공한 것이 아니라 여러 dataset과 여러 model에서 높은 ASR을 보였다는 것이다. 특히 unseen prompt에서도 높은 성공률을 보인 점은 safety mechanism 자체가 약화되었을 가능성을 뒷받침한다.<br><br>
-
-또한 utility 평가를 함께 수행한 점도 중요하다. Jailbreak 공격이 성공하더라도 모델이 완전히 망가진 상태라면 의미가 줄어든다. TwinBreak는 utility parameter exclusion과 50-token inference strategy를 통해 모델의 일반 성능 손상을 줄이려 했다는 점에서, 단순한 pruning 공격보다 더 정교한 접근으로 보인다.<br><br>
-
-다만 평가가 LlamaGuard3나 StrongREJECT evaluator 같은 자동 평가기에 의존한다는 점은 한계로 볼 수 있다. 자동 평가기는 편리하지만, 실제 harmfulness를 완벽히 판단한다고 보기 어렵다. 따라서 사람 평가나 더 다양한 평가 기준이 추가되면 결과의 신뢰성이 더 높아질 수 있을 것 같다.<br><br>
-
-그리고 jailbreak 성공률이 높은 것도 중요하지만, 안전장치를 어느정도 약화시키지만 모델 성능이 그렇게 낮아지지 않은 실험결과는 safety alignment자체가 모델 내부에 크게 통합되어있지 않음을 나타낸다고 볼 수 있고, 보안상 쉽게 뚫릴것같다는 느낌도 든다. <br>
 
 
 ---
@@ -257,14 +228,6 @@ TwinBreak는 LLM safety alignment의 취약성을 보여준다는 점에서 보�
 
 저자들은 이 연구가 LLM의 기존 위험을 새롭게 만든 것이 아니라, 이미 존재하는 위험을 드러내는 것이라고 설명한다. 그러나 코드와 데이터셋이 공개되는 경우, 방어 연구자뿐 아니라 악의적인 사용자도 이를 활용할 수 있다. 따라서 이런 연구는 공개 범위와 재현 가능성, 방어 목적의 안내 사이에서 신중한 균형이 필요하다고 생각한다.<br><br>
 
-## [이 섹션에 대한 생각]
-
-내가 보기에 이 논문의 가장 큰 한계는 white-box 환경을 전제로 한다는 점이다. 일반적인 사용자가 API 기반 LLM에 대해 TwinBreak를 바로 적용하기는 어렵다. 하지만 오픈소스 LLM이 계속 확산되고 있다는 점을 고려하면, 이 위협 모델이 완전히 비현실적이라고 보기도 어렵다.<br><br>
-
-또한 twin prompt라는 아이디어는 설득력 있지만, 수작업으로 구성된 데이터셋에 의존한다는 점은 아쉽다. 후속 연구에서는 twin prompt를 자동 생성하거나, prompt pair의 유사성을 정량적으로 평가하는 방법이 필요해 보인다.<br><br>
-
-마지막으로, 이 논문은 공격을 잘 보여주지만 방어 방법은 아직 구체적이지 않다. 따라서 TwinBreak의 진짜 의미는 “이 방법으로 공격할 수 있다”에서 끝나는 것이 아니라, 앞으로 safety alignment를 모델 내부에 어떻게 더 강건하게 통합할 것인지 묻는 데 있다고 생각한다.<br><br>
-
 | 한계 | 핵심 내용 |
 |:-----:|:---------:|
 | White-box 조건 | 모델 내부 접근이 필요함 |
@@ -285,13 +248,16 @@ TwinBreak는 LLM safety alignment의 취약성을 보여준다는 점에서 보�
 결국 TwinBreak 기법은 위험한 질문(harmful prompt)과 안전한 질문(harmless prompt)를 거의 똑같이 만들어 모델에 넣고 비교하며, 직접 내부의 동작이 어떻게 바뀌는지 확인한다. 위험한 질문에서 특히 반응하는 부분을 안전장치라고 가정하여 조금씩 조금씩 지워나가면서 모델의 기본 능력에는 영향을 최대한 덜 주며 약화시키는 것이다. <br>
 결국에는 여러 모델에서도 이 기법을 이용하여 harmful prompt를 거절하는 능력이 많이 약해졌고, 일반 성능은 그렇게 망가지는 것은 아니라는 결과를 적은 것이다.
 
-## 6-2. 느낀 점
+## 6-2. 종합 평가
 
-이 논문을 읽으면서 가장 먼저 든 생각은 LLM의 안전 문제가 생각보다 더 내부적인 문제일 수 있다는 것이었다. 처음에는 jailbreak라고 하면 단순히 프롬프트를 교묘하게 바꿔서 모델을 속이는 방식만 떠올렸다. 하지만 이 논문은 모델 내부의 parameter를 직접 분석하고 수정하는 방식도 가능하다는 점을 보여준다. 특히 오픈소스 LLM이 많아지는 상황에서는 모델을 직접 다운로드해 분석할 수 있기 때문에, white-box 환경을 완전히 비현실적인 가정으로만 보기는 어렵다고 느꼈다.<br><br>
+TwinBreak의 가장 큰 의의는 LLM의 safety alignment가 모델 내부 파라미터 수준에서 분석될 수 있음을 보였다는 점이다. 기존 jailbreak 연구가 주로 prompt를 조작해 안전장치를 우회하는 데 집중했다면, TwinBreak는 safety alignment와 관련된 내부 parameter를 찾고 pruning한다는 점에서 더 근본적인 문제를 제기한다.
 
-또 인상적이었던 부분은 twin prompt라는 아이디어였다. 단순히 harmful prompt와 harmless prompt를 비교하면 두 문장의 주제나 구조가 달라서 activation 차이의 원인을 정확히 알기 어렵다. 하지만 두 prompt를 최대한 비슷하게 만들고 위험성만 다르게 하면, 모델 내부에서 safety mechanism이 어떻게 반응하는지 더 잘 볼 수 있다. 이 점이 논문의 핵심 아이디어이자 가장 설득력 있는 부분이라고 생각했다.<br><br>
+방법론 측면에서는 TwinPrompt의 설계가 핵심적이다. Harmful prompt와 harmless prompt를 거의 같은 구조로 만들었기 때문에, 두 입력 사이의 activation difference를 safety mechanism과 연결할 근거가 생긴다. 이는 기존 white-box jailbreak 방법들이 harmful/harmless input을 비교할 때 발생할 수 있는 주제 차이 문제를 줄이려는 시도라고 볼 수 있다.
 
-다만 이 논문이 공격 방법을 다룬다는 점에서는 조심스럽게 봐야 한다고 생각한다. 저자들은 보안 취약성을 드러내기 위한 연구라고 설명하지만, safety alignment를 제거하는 방법이 공개되면 악용될 가능성도 있다. 그래서 이런 연구는 단순히 "공격이 가능하다"에서 끝나는 것이 아니라, 앞으로 어떻게 방어할 것인지까지 함께 논의되어야 한다고 느꼈다.<br><br>
+다만 이 접근이 완전히 일반화되었다고 보기는 어렵다. TwinPrompt는 수작업으로 구성되었고 영어 중심이며, safety alignment를 backdoor-like mechanism으로 보는 가정도 모든 모델에 적용된다고 단정하기 어렵다. 또한 평가가 자동 evaluator에 의존한다는 점에서 실제 harmfulness 판단에는 추가 검증이 필요하다.
+
+그럼에도 이 논문은 오픈소스 LLM 환경에서 중요한 보안적 의미를 가진다. 모델 내부 접근이 가능한 상황에서는 외부 필터만으로 안전성을 보장하기 어렵고, safety alignment가 모델 내부에 더 강하게 통합되어야 한다는 점을 보여준다.
+
 
 ## 6-3. 앞으로 더 읽어볼 논문
 
@@ -308,7 +274,9 @@ TwinBreak는 LLM safety alignment의 취약성을 보여준다는 점에서 보�
 3. utility parameter는 보호한다. 모델 내부 파라미터를 건드리기에 잘못 삭제한다면 모델 자체의 성능이 떨어질 수 있다. 그건 안전장치를 약화시킨게 아니라 그냥 모델을 망가뜨리는것이라고 볼 수 있는데, TwinBreak 공격기법은 모델의 성능이 조금은 떨어지지만, 그렇게 많이 떨어지지않고 safety alignment만 없앨 수 있다는 점이 부각된다.
 4. 결국 TwinBreak는 실제 흔히 서비스 되는 Black-box 기반 LLM이 아닌, white-box 환경에서 사용할 수 있는 기법이란것을 알아야한다. 그러면서도 모델 내부에 접근할 수 있다면 안전장치가 제거될수있다는 점을 말하며, 안전장치 설계에 힘을 써야하는것을 의미한다. <br>
 
-## 6-5. 용어정리
+
+
+# 용어 정리
 
 | 용어 | 설명 |
 |:---:|:------------------------------|
@@ -337,52 +305,37 @@ TwinBreak는 LLM safety alignment의 취약성을 보여준다는 점에서 보�
 | Down Layer | 확장된 표현을 다시 원래 크기로 줄이는 부분이다. TwinBreak에서는 기본 pruning 대상에서 제외된다. |
 | Unseen Prompt | pruning이나 학습에 사용되지 않은 새로운 prompt이다. 논문에서는 TwinBreak가 unseen prompt에도 작동하는지 평가한다. |
 
----
-
-# 7. References
-
-이번 리뷰에서 중심이 된 논문은 다음과 같다.
-
+# References
 * Torsten Krauß, Hamid Dashtbani, and Alexandra Dmitrienko. **TwinBreak: Jailbreaking LLM Security Alignments based on Twin Prompts.** 34th USENIX Security Symposium, 2025.
 
-이 논문을 이해하는 데 중요했던 관련 연구와 데이터셋은 다음과 같다.
+관련 논문: 
 
 * Mazeika et al. **HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal.** 2024.
-
   * TwinPrompt 데이터셋을 구성하는 기반이 된 harmful prompt benchmark이다.
 
 * Zou et al. **Universal and Transferable Adversarial Attacks on Aligned Language Models.** 2023.
-
   * gradient 기반 jailbreak prompt 생성 연구로, 기존 white-box jailbreak 흐름을 이해하는 데 관련이 있다.
 
 * Chao et al. **JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models.** 2024.
-
   * LLM jailbreak 성능 평가에 사용되는 benchmark 중 하나이다.
 
 * Souly et al. **A StrongREJECT for Empty Jailbreaks.** 2024.
-
   * 단순히 거절 여부만 보는 것이 아니라, harmful response의 구체성과 유효성을 평가하기 위한 benchmark이다.
 
 * Arditi et al. **Refusal in Language Models is Mediated by a Single Direction.** 2024.
-
   * Directional Ablation 방식과 관련된 연구로, TwinBreak와 비교되는 white-box jailbreak 방법이다.
 
 * Wei et al. **Assessing the Brittleness of Safety Alignment via Pruning and Low-Rank Modifications.** 2024.
-
   * pruning을 이용해 safety alignment의 취약성을 분석한 연구로, TwinBreak와 가장 가까운 기존 연구 중 하나이다.
 
 * Wang et al. **Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks.** 2019.
-
   * backdoor를 탐지하고 pruning하는 연구로, TwinBreak가 safety alignment를 backdoor-like mechanism으로 해석하는 데 배경이 되는 연구이다.
 
 * Touvron et al. **LLaMA 2: Open Foundation and Fine-Tuned Chat Models.** 2023.
-
   * TwinBreak 실험에서 사용된 대표적인 open-source LLM 계열이다.
 
 * Meta AI Research. **The Llama 3 Herd of Models.** 2024.
-
   * TwinBreak 실험에서 사용된 LLaMA 3.1, LLaMA 3.3 계열 모델과 관련된 참고문헌이다.
 
 * Vaswani et al. **Attention Is All You Need.** 2017.
-
   * Transformer 구조의 기반이 되는 논문으로, LLM의 decoder-only architecture를 이해하는 데 배경이 된다.
