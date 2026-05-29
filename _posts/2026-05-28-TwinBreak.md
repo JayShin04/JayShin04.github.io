@@ -191,13 +191,13 @@ TwinBreak의 방법론에서 가장 인상적인 부분은 twin prompt를 사용
 
 AdvBench와 JailbreakBench에서도 비슷하게 높은 ASR을 보였고, StrongREJECT에서도 높은 평균 점수를 기록했다. 이는 TwinBreak가 단순히 refusal을 피하는 데 그치지 않고, 여러 평가 기준에서 safety alignment를 약화시키는 효과를 보였다는 의미로 해석할 수 있다. <br><br>
 
-## 4-5. 일반화 성능
+## 4-4. 일반화 성능
 
 결과적으로 TwinBreak는 pruning에 사용되지 않은 prompt에서도 높은 ASR을 보였다. 저자들은 이를 통해 TwinBreak가 특정 prompt를 암기하거나 특정 데이터셋에만 과적합된 것이 아니라, safety alignment와 관련된 일반적인 내부 parameter를 제거했다고 주장한다.<br><br>
 
 조금 더 쉽게 말하자면, 단순히 TwinPrompt를 외운것이 아니라 safety mechanism 자체가 약화되었다고 볼 여지가 생긴 것이다.
 
-## 4-6. Utility 평가
+## 4-5. Utility 평가
 
 TwinBreak가 안전장치를 지우려다가 일반 성능까지 손상시키면 안되기에 저자들은 TwinBreak가 모델의 일반 성능을 얼마나 손상시키는지도 평가했다. 이를 위해 OpenBookQA, ARC-Challenge, HellaSwag, RTE, WinoGrande 같은 일반 LLM benchmark를 사용했다.<br><br>
 
@@ -308,7 +308,7 @@ TwinBreak는 LLM safety alignment의 취약성을 보여준다는 점에서 보�
 3. utility parameter는 보호한다. 모델 내부 파라미터를 건드리기에 잘못 삭제한다면 모델 자체의 성능이 떨어질 수 있다. 그건 안전장치를 약화시킨게 아니라 그냥 모델을 망가뜨리는것이라고 볼 수 있는데, TwinBreak 공격기법은 모델의 성능이 조금은 떨어지지만, 그렇게 많이 떨어지지않고 safety alignment만 없앨 수 있다는 점이 부각된다.
 4. 결국 TwinBreak는 실제 흔히 서비스 되는 Black-box 기반 LLM이 아닌, white-box 환경에서 사용할 수 있는 기법이란것을 알아야한다. 그러면서도 모델 내부에 접근할 수 있다면 안전장치가 제거될수있다는 점을 말하며, 안전장치 설계에 힘을 써야하는것을 의미한다. <br>
 
-## 6-6. 용어정리
+## 6-5. 용어정리
 
 | 용어 | 설명 |
 |:---:|:------------------------------|
