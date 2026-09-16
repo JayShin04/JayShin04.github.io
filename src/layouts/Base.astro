@@ -45,7 +45,11 @@ const { title, meta_title, description, image, noindex, canonical } =
       )
     }
     <!-- favicon -->
-    <link rel="shortcut icon" href={config.site.favicon} />
+    {
+      config.site.favicon && (
+        <link rel="shortcut icon" href={config.site.favicon} />
+      )
+    }
     <!-- theme meta -->
     <meta name="msapplication-TileColor" content="#000000" />
     <meta
@@ -137,20 +141,24 @@ const { title, meta_title, description, image, noindex, canonical } =
     />
 
     <!-- og-image -->
-    <meta
-      property="og:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
-    />
-
-    <!-- twitter-image -->
-    <meta
-      name="twitter:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
-    />
+    {
+      (image || config.metadata.meta_image) && (
+        <>
+          <meta
+            property="og:image"
+            content={`${config.site.base_url}${
+              image ? image : config.metadata.meta_image
+            }`}
+          />
+          <meta
+            name="twitter:image"
+            content={`${config.site.base_url}${
+              image ? image : config.metadata.meta_image
+            }`}
+          />
+        </>
+      )
+    }
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="flex flex-col min-h-screen">

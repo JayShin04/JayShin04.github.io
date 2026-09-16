@@ -3,7 +3,7 @@ title: "첫 번째 글"
 meta_title: ""
 description: "TODO: 글 요약을 입력하세요."
 date: 2026-09-15T00:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["TODO"]
 author: "JayShin04"
 tags: ["TODO"]

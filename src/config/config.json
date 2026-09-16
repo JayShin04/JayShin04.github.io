@@ -4,9 +4,9 @@
     "base_url": "https://jayshin04.github.io",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "favicon": "",
+    "logo": "",
+    "logo_darkmode": "",
     "logo_width": "150",
     "logo_height": "30",
     "logo_text": "JayShin04"
@@ -52,7 +52,7 @@
 
   "metadata": {
     "meta_author": "JayShin04",
-    "meta_image": "/images/og-image.png",
+    "meta_image": "",
     "meta_description": "TODO: 블로그 소개 문구를 입력하세요."
   },
 

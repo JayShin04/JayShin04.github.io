@@ -7,6 +7,6 @@ description: "TODO: 섹션 설명을 입력하세요."
 testimonials:
   - name: "TODO: 이름"
     designation: "TODO: 직함"
-    avatar: "/images/avatar-sm.png"
+    avatar: ""
     content: "TODO: 내용을 입력하세요."
 ---

@@ -1,7 +1,7 @@
 ---
 title: JayShin04
 email: ""
-image: "/images/avatar.png"
+image: ""
 description: "TODO: 작성자 소개를 입력하세요."
 social:
   - name: github
