@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Disallow: /api/*
+Sitemap: https://jayshin04.github.io/sitemap-index.xml
