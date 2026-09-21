@@ -10,13 +10,25 @@ import { render } from "astro:content";
 import { FaRegClock, FaRegFolder, FaRegUserCircle } from "react-icons/fa";
 import ImageMod from "./components/ImageMod.astro";
 
+import ProtectedContent from "@/components/ProtectedContent";
+import { encryptContent } from "@/lib/utils/crypto";
+import { marked } from "marked";
+
 const COLLECTION_FOLDER = "blog";
 const { post } = Astro.props;
 
 const posts = await getSinglePage(COLLECTION_FOLDER);
 const similarPosts = similarItems(post, posts);
 const { Content } = await render(post);
-const { title, description, author, categories, image, date, tags } = post.data;
+const { title, description, author, categories, image, date, tags, password } =
+  post.data;
+
+const isProtected = Boolean(password);
+let encryptedPayload = null;
+if (isProtected && password) {
+  const renderedHtml = await marked.parse(post.body || "");
+  encryptedPayload = await encryptContent(renderedHtml, password);
+}
 ---
 
 <section class="section pt-7">
@@ -61,9 +73,19 @@ const { title, description, author, categories, image, date, tags } = post.data;
             {dateFormat(date)}
           </li>
         </ul>
-        <div class="content mb-10">
-          <Content />
-        </div>
+        {
+          isProtected && encryptedPayload ? (
+            <ProtectedContent
+              client:load
+              payload={encryptedPayload}
+              postSlug={post.id}
+            />
+          ) : (
+            <div class="content mb-10">
+              <Content />
+            </div>
+          )
+        }
         <div class="row items-start justify-between">
           <div class="mb-10 flex items-center lg:col-5 lg:mb-0">
             <h5 class="mr-3">Tags :</h5>
@@ -92,7 +114,7 @@ const { title, description, author, categories, image, date, tags } = post.data;
             />
           </div>
         </div>
-        <Disqus className="mt-20" client:only="react" />
+        {!isProtected && <Disqus className="mt-20" client:only="react" />}
       </article>
     </div>
 

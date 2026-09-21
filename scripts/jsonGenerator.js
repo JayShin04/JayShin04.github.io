@@ -30,11 +30,18 @@ const getData = (folder, groupDepth) => {
           .replace(/\.[^/.]+$/, "");
       const group = pathParts[groupDepth];
 
+      const frontmatter = { ...data };
+      let postContent = content;
+      if (frontmatter.password) {
+        delete frontmatter.password;
+        postContent = "";
+      }
+
       return {
         group: group,
         slug: slug,
-        frontmatter: data,
-        content: content,
+        frontmatter: frontmatter,
+        content: postContent,
       };
     } else {
       return [];

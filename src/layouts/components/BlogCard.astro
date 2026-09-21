@@ -10,7 +10,7 @@ const {
   blog_folder,
 }: { summary_length: number; blog_folder: string } = config.settings;
 const { data } = Astro.props;
-const { title, image, date, author, categories } = data.data;
+const { title, image, date, author, categories, password } = data.data;
 ---
 
 <div class="bg-body dark:bg-darkmode-body">
@@ -51,7 +51,17 @@ const { title, image, date, author, categories } = data.data;
     </li>
     {date && <li class="inline-block">{dateFormat(date)}</li>}
   </ul>
-  <p class="mb-6">{plainify(data.body?.slice(0, Number(summary_length)))}</p>
+  {
+    password ? (
+      <p class="mb-6 flex items-center text-text-light dark:text-darkmode-text-light">
+        <span class="mr-1.5 inline-block">🔒</span> 비밀번호로 보호된 글입니다.
+      </p>
+    ) : (
+      <p class="mb-6">
+        {plainify(data.body?.slice(0, Number(summary_length)))}
+      </p>
+    )
+  }
   <a class="btn btn-outline-primary btn-sm" href={`/${blog_folder}/${data.id}`}>
     read more
   </a>
