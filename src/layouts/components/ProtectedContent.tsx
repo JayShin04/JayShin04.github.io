@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaLock, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import {
   decryptContent,
+  decryptWithJwt,
+  createPostJwt,
   PostCookie,
   type EncryptedPayload,
 } from "@/lib/utils/crypto";
@@ -24,17 +26,17 @@ const ProtectedContent: React.FC<ProtectedContentProps> = ({
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
-  // Check saved cookie on initial render
+  // Check saved JWT cookie on initial render
   useEffect(() => {
-    const savedPassword = PostCookie.get(postSlug);
-    if (savedPassword) {
-      decryptContent(payload, savedPassword)
+    const savedJwt = PostCookie.get(postSlug);
+    if (savedJwt) {
+      decryptWithJwt(payload, savedJwt, postSlug)
         .then((decrypted) => {
           setHtmlContent(decrypted);
           setIsUnlocked(true);
         })
         .catch(() => {
-          // If saved cookie password is no longer valid, delete it
+          // If saved token is expired or invalid, remove it
           PostCookie.remove(postSlug);
         })
         .finally(() => {
@@ -55,7 +57,9 @@ const ProtectedContent: React.FC<ProtectedContentProps> = ({
     try {
       const decrypted = await decryptContent(payload, password.trim());
       if (remember) {
-        PostCookie.set(postSlug, password.trim(), 7); // Valid for 7 days
+        // Issue signed JWT with derived key (NO plaintext password in cookie!)
+        const jwt = await createPostJwt(postSlug, password.trim(), payload, 7);
+        PostCookie.set(postSlug, jwt, 7); // Valid for 7 days
       } else {
         PostCookie.remove(postSlug);
       }
