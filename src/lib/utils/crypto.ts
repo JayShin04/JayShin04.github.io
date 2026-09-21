@@ -271,15 +271,27 @@ export async function decryptWithJwt(
 }
 
 /**
- * Helper to manage post-specific JWT cookies
+ * Compute SHA-256 hash of a string and return hex string
+ */
+export async function sha256Hex(text: string): Promise<string> {
+  const enc = new TextEncoder();
+  const hashBuffer = await crypto.subtle.digest("SHA-256", enc.encode(text));
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+/**
+ * Helper to manage post-specific JWT cookies with SHA-256 hashed slug
  */
 export const PostCookie = {
-  getCookieName: (slug: string) =>
-    `post_jwt_${slug.replace(/[^a-zA-Z0-9_-]/g, "_")}`,
+  getCookieName: async (slug: string): Promise<string> => {
+    const hash = await sha256Hex(slug);
+    return `post_jwt_${hash}`;
+  },
 
-  get: (slug: string): string | null => {
+  get: async (slug: string): Promise<string | null> => {
     if (typeof document === "undefined") return null;
-    const name = PostCookie.getCookieName(slug);
+    const name = await PostCookie.getCookieName(slug);
     const cookies = document.cookie.split("; ");
     for (const cookie of cookies) {
       const [key, ...rest] = cookie.split("=");
@@ -290,16 +302,20 @@ export const PostCookie = {
     return null;
   },
 
-  set: (slug: string, jwtToken: string, days: number = 7) => {
+  set: async (
+    slug: string,
+    jwtToken: string,
+    days: number = 7,
+  ): Promise<void> => {
     if (typeof document === "undefined") return;
-    const name = PostCookie.getCookieName(slug);
+    const name = await PostCookie.getCookieName(slug);
     const expires = new Date(Date.now() + days * 864e5).toUTCString();
     document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(jwtToken)}; path=/; expires=${expires}; SameSite=Lax`;
   },
 
-  remove: (slug: string) => {
+  remove: async (slug: string): Promise<void> => {
     if (typeof document === "undefined") return;
-    const name = PostCookie.getCookieName(slug);
+    const name = await PostCookie.getCookieName(slug);
     document.cookie = `${encodeURIComponent(name)}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax`;
   },
 };

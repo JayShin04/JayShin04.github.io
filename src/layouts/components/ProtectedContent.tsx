@@ -28,23 +28,33 @@ const ProtectedContent: React.FC<ProtectedContentProps> = ({
 
   // Check saved JWT cookie on initial render
   useEffect(() => {
-    const savedJwt = PostCookie.get(postSlug);
-    if (savedJwt) {
-      decryptWithJwt(payload, savedJwt, postSlug)
-        .then((decrypted) => {
-          setHtmlContent(decrypted);
-          setIsUnlocked(true);
-        })
-        .catch(() => {
-          // If saved token is expired or invalid, remove it
-          PostCookie.remove(postSlug);
-        })
-        .finally(() => {
+    let isMounted = true;
+
+    async function checkCookie() {
+      try {
+        const savedJwt = await PostCookie.get(postSlug);
+        if (savedJwt && isMounted) {
+          const decrypted = await decryptWithJwt(payload, savedJwt, postSlug);
+          if (isMounted) {
+            setHtmlContent(decrypted);
+            setIsUnlocked(true);
+          }
+        }
+      } catch {
+        // If saved token is expired or invalid, remove it
+        await PostCookie.remove(postSlug);
+      } finally {
+        if (isMounted) {
           setLoading(false);
-        });
-    } else {
-      setLoading(false);
+        }
+      }
     }
+
+    checkCookie();
+
+    return () => {
+      isMounted = false;
+    };
   }, [postSlug, payload]);
 
   const handleUnlock = async (e?: React.SyntheticEvent) => {
@@ -59,9 +69,9 @@ const ProtectedContent: React.FC<ProtectedContentProps> = ({
       if (remember) {
         // Issue signed JWT with derived key (NO plaintext password in cookie!)
         const jwt = await createPostJwt(postSlug, password.trim(), payload, 7);
-        PostCookie.set(postSlug, jwt, 7); // Valid for 7 days
+        await PostCookie.set(postSlug, jwt, 7); // Valid for 7 days
       } else {
-        PostCookie.remove(postSlug);
+        await PostCookie.remove(postSlug);
       }
       setHtmlContent(decrypted);
       setIsUnlocked(true);
@@ -72,8 +82,8 @@ const ProtectedContent: React.FC<ProtectedContentProps> = ({
     }
   };
 
-  const handleLockAgain = () => {
-    PostCookie.remove(postSlug);
+  const handleLockAgain = async () => {
+    await PostCookie.remove(postSlug);
     setIsUnlocked(false);
     setHtmlContent("");
     setPassword("");
