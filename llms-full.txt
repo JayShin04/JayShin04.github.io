@@ -1,0 +1,938 @@
+# JayShin04
+
+URL: https://jayshin04.github.io
+
+## 제목
+
+URL: https://jayshin04.github.io
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# 제목
+
+Content Type
+
+![banner](/_astro/raccoon.C-kbhrUz_ZqyAxT.webp)
+
+[](#recent-posts)
+
+## 최근 글
+
+#### [디지털 포렌식 정리 02](/blog/digital-forensic-02)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   08 Oct, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-02)
+
+#### [디지털 포렌식 정리 01](/blog/digital-forensic-01)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   27 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-01)
+
+#### [비밀번호로 보호된 글 예시](/blog/protected-example)
+
+-   [JayShin04](/authors/jayshin04)
+-   [보안](/categories/보안)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/protected-example)
+
+#### [테스트 글](/blog/test)
+
+-   [JayShin04](/authors/jayshin04)
+-   [블로그](/categories/블로그)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/test)
+
+#### [첫 번째 글](/blog/hello-world)
+
+-   [JayShin04](/authors/jayshin04)
+-   [TODO](/categories/todo)
+-   15 Sep, 2026
+
+TODO: 본문을 작성하세요. 소제목 이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+[read more](/blog/hello-world)
+
+[전체 글 보기](/blog)
+
+---
+
+## TODO: 자기소개 제목
+
+URL: https://jayshin04.github.io/about
+
+TODO: About 페이지 메타 설명을 입력하세요.
+
+
+## TODO: 자기소개 제목
+
+TODO: 자기소개 본문을 작성하세요.
+
+---
+
+## Authors
+
+URL: https://jayshin04.github.io/authors
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# Authors
+
+#### [JayShin04](/authors/jayshin04)
+
+TODO: 작성자 소개 본문을 작성하세요.
+
+-   [github](https://github.com/JayShin04)
+
+---
+
+## JayShin04
+
+URL: https://jayshin04.github.io/authors/jayshin04
+
+TODO: 작성자 소개를 입력하세요.
+
+
+# JayShin04
+
+TODO: 작성자 소개 본문을 작성하세요.
+
+-   [github](https://github.com/JayShin04)
+
+#### [디지털 포렌식 정리 01](/blog/digital-forensic-01)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   27 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-01)
+
+#### [디지털 포렌식 정리 02](/blog/digital-forensic-02)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   08 Oct, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-02)
+
+#### [첫 번째 글](/blog/hello-world)
+
+-   [JayShin04](/authors/jayshin04)
+-   [TODO](/categories/todo)
+-   15 Sep, 2026
+
+TODO: 본문을 작성하세요. 소제목 이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+[read more](/blog/hello-world)
+
+#### [비밀번호로 보호된 글 예시](/blog/protected-example)
+
+-   [JayShin04](/authors/jayshin04)
+-   [보안](/categories/보안)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/protected-example)
+
+#### [테스트 글](/blog/test)
+
+-   [JayShin04](/authors/jayshin04)
+-   [블로그](/categories/블로그)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/test)
+
+---
+
+## 블로그 목록
+
+URL: https://jayshin04.github.io/blog
+
+블로그 글 목록
+
+
+# 블로그 목록
+
+#### [디지털 포렌식 정리 02](/blog/digital-forensic-02)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   08 Oct, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-02)
+
+#### [디지털 포렌식 정리 01](/blog/digital-forensic-01)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   27 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-01)
+
+#### [비밀번호로 보호된 글 예시](/blog/protected-example)
+
+-   [JayShin04](/authors/jayshin04)
+-   [보안](/categories/보안)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/protected-example)
+
+#### [테스트 글](/blog/test)
+
+-   [JayShin04](/authors/jayshin04)
+-   [블로그](/categories/블로그)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/test)
+
+#### [첫 번째 글](/blog/hello-world)
+
+-   [JayShin04](/authors/jayshin04)
+-   [TODO](/categories/todo)
+-   15 Sep, 2026
+
+TODO: 본문을 작성하세요. 소제목 이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+[read more](/blog/hello-world)
+
+##### Categories
+
+-   [학습 (2)](/categories/학습)
+-   [Todo (1)](/categories/todo)
+-   [보안 (1)](/categories/보안)
+-   [블로그 (1)](/categories/블로그)
+
+##### Tags
+
+-   [학습](/tags/학습)
+-   [블로그](/tags/블로그)
+-   [Todo](/tags/todo)
+-   [비밀글](/tags/비밀글)
+
+---
+
+## Related Posts
+
+URL: https://jayshin04.github.io/blog/digital-forensic-01
+
+🔒 비밀글입니다.
+
+
+인증 상태 확인 중...
+
+##### Tags :
+
+-   [학습](/tags/학습)
+-   [블로그](/tags/블로그)
+
+##### Share :
+
+-   [](https://x.com/intent/tweet?text=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fdigital-forensic-01)
+-   [](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fdigital-forensic-01&title=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&summary=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&source=https://jayshin04.github.io)
+
+## Related Posts
+
+#### [디지털 포렌식 정리 02](/blog/digital-forensic-02)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   08 Oct, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-02)
+
+---
+
+## Related Posts
+
+URL: https://jayshin04.github.io/blog/digital-forensic-02
+
+🔒 비밀글입니다.
+
+
+인증 상태 확인 중...
+
+##### Tags :
+
+-   [학습](/tags/학습)
+-   [블로그](/tags/블로그)
+
+##### Share :
+
+-   [](https://x.com/intent/tweet?text=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fdigital-forensic-02)
+-   [](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fdigital-forensic-02&title=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&summary=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&source=https://jayshin04.github.io)
+
+## Related Posts
+
+#### [디지털 포렌식 정리 01](/blog/digital-forensic-01)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   27 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-01)
+
+---
+
+## 첫 번째 글
+
+URL: https://jayshin04.github.io/blog/hello-world
+
+TODO: 글 요약을 입력하세요.
+
+
+# 첫 번째 글
+
+-   [JayShin04](/authors/jayshin04)
+-   [TODO](/categories/todo)
+-   15 Sep, 2026
+
+TODO: 본문을 작성하세요.
+
+## 소제목
+
+이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+##### Tags :
+
+-   [TODO](/tags/todo)
+
+##### Share :
+
+-   [](https://x.com/intent/tweet?text=%EC%B2%AB%20%EB%B2%88%EC%A7%B8%20%EA%B8%80&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fhello-world)
+-   [](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fhello-world&title=%EC%B2%AB%20%EB%B2%88%EC%A7%B8%20%EA%B8%80&summary=TODO%3A%20%EA%B8%80%20%EC%9A%94%EC%95%BD%EC%9D%84%20%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94.&source=https://jayshin04.github.io)
+
+## Related Posts
+
+#### [테스트 글](/blog/test)
+
+-   [JayShin04](/authors/jayshin04)
+-   [블로그](/categories/블로그)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/test)
+
+---
+
+## Related Posts
+
+URL: https://jayshin04.github.io/blog/protected-example
+
+🔒 비밀글입니다.
+
+
+인증 상태 확인 중...
+
+##### Tags :
+
+-   [비밀글](/tags/비밀글)
+
+##### Share :
+
+-   [](https://x.com/intent/tweet?text=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fprotected-example)
+-   [](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Fprotected-example&title=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&summary=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&source=https://jayshin04.github.io)
+
+## Related Posts
+
+---
+
+## Related Posts
+
+URL: https://jayshin04.github.io/blog/test
+
+🔒 비밀글입니다.
+
+
+인증 상태 확인 중...
+
+##### Tags :
+
+-   [TODO](/tags/todo)
+
+##### Share :
+
+-   [](https://x.com/intent/tweet?text=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Ftest)
+-   [](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fjayshin04.github.io%2Fblog%2Ftest&title=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&summary=%F0%9F%94%92%20%EB%B9%84%EB%B0%80%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.&source=https://jayshin04.github.io)
+
+## Related Posts
+
+#### [첫 번째 글](/blog/hello-world)
+
+-   [JayShin04](/authors/jayshin04)
+-   [TODO](/categories/todo)
+-   15 Sep, 2026
+
+TODO: 본문을 작성하세요. 소제목 이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+[read more](/blog/hello-world)
+
+---
+
+## Categories
+
+URL: https://jayshin04.github.io/categories
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# Categories
+
+-   [학습 2](/categories/학습)
+-   [Todo 1](/categories/todo)
+-   [보안 1](/categories/보안)
+-   [블로그 1](/categories/블로그)
+
+---
+
+## Todo
+
+URL: https://jayshin04.github.io/categories/todo
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# Todo
+
+#### [첫 번째 글](/blog/hello-world)
+
+-   [JayShin04](/authors/jayshin04)
+-   [TODO](/categories/todo)
+-   15 Sep, 2026
+
+TODO: 본문을 작성하세요. 소제목 이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+[read more](/blog/hello-world)
+
+---
+
+## 보안
+
+URL: https://jayshin04.github.io/categories/보안
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# 보안
+
+#### [비밀번호로 보호된 글 예시](/blog/protected-example)
+
+-   [JayShin04](/authors/jayshin04)
+-   [보안](/categories/보안)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/protected-example)
+
+---
+
+## 블로그
+
+URL: https://jayshin04.github.io/categories/블로그
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# 블로그
+
+#### [테스트 글](/blog/test)
+
+-   [JayShin04](/authors/jayshin04)
+-   [블로그](/categories/블로그)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/test)
+
+---
+
+## 학습
+
+URL: https://jayshin04.github.io/categories/학습
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# 학습
+
+#### [디지털 포렌식 정리 02](/blog/digital-forensic-02)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   08 Oct, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-02)
+
+#### [디지털 포렌식 정리 01](/blog/digital-forensic-01)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   27 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-01)
+
+---
+
+## Contact
+
+URL: https://jayshin04.github.io/contact
+
+연락처
+
+
+# Contact
+
+Full Name \*
+
+Working Mail \*
+
+Anything else? \*
+
+Submit
+
+---
+
+## Elements
+
+URL: https://jayshin04.github.io/elements
+
+this is meta description
+
+
+# Elements
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+* * *
+
+### Paragraph
+
+Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. Could someone survive inside a transporter buffer for 75 years? Fate. It protects fools, little children, and ships.
+
+Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf. Could someone survive inside a transporter buffer for 75 years? Fate. It protects fools, little children, and ships.
+
+* * *
+
+### Emphasis
+
+1.  Did you come here for something in **particular** or just general
+    
+2.  Did you come here for something in particular
+    
+3.  _Did you come here_
+    
+4.  Did you come here for **something** in particular
+    
+5.  Did you come here for something in particular
+    
+6.  Did you come here for something in particular
+    
+7.  URLs and URLs in angle brackets will automatically get turned into links. [http://www.example.com](http://www.example.com) or
+    
+8.  [http://www.example.com](http://www.example.com) and sometimes example.com (but not on Github, for example).
+    
+
+* * *
+
+### Link
+
+[I’m an inline-style link](https://www.google.com)
+
+[I’m an inline-style link with title](https://www.google.com "Google's Homepage")
+
+[I’m a relative reference to a repository file](../blob/master/LICENSE)
+
+example.com (but not on Github, for example).
+
+Some text to show that the reference links can follow later.
+
+* * *
+
+### Ordered List
+
+1.  List item
+2.  List item
+3.  List item
+4.  List item
+5.  List item
+
+* * *
+
+### Unordered List
+
+-   List item
+-   List item
+-   List item
+-   List item
+-   List item
+
+* * *
+
+### Code and Syntax Highlighting
+
+#### HTML
+
+```
+<ul>
+  <li class="nav-item">
+    <a class="nav-link" href="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="about/">About</a>
+  </li>
+</ul>
+```
+
+* * *
+
+#### CSS
+
+```
+img {
+  vertical-align: middle;
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+```
+
+* * *
+
+#### JavaScript
+
+```
+window.addEventListener("load", (e) => {
+  document.querySelector(".preloader").style.display = "none";
+});
+```
+
+* * *
+
+### Button
+
+[Solid](#) [Outline](#)
+
+* * *
+
+### Quote
+
+> Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once.
+
+* * *
+
+### Notice
+
+Note
+
+This is a simple note.
+
+Tip
+
+This is a simple note.
+
+Info
+
+This is a simple note.
+
+Warning
+
+This is a simple note.
+
+* * *
+
+### Tab
+
+-   Tab 1
+-   Tab 2
+-   Tab 3
+
+#### Did you come here for something in particular?
+
+Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.
+
+#### I wanna talk about the assassination attempt
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+#### We know you’re dealing in stolen ore
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+
+* * *
+
+### Table
+
+#
+
+First
+
+Last
+
+Handle
+
+1
+
+Row:1 Cell:1
+
+Row:1 Cell:2
+
+Row:1 Cell:3
+
+2
+
+Row:2 Cell:1
+
+Row:2 Cell:2
+
+Row:2 Cell:3
+
+3
+
+Row:3 Cell:1
+
+Row:3 Cell:2
+
+Row:3 Cell:3
+
+* * *
+
+### Accordion
+
+Why should you need to do this?
+
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+
+How can I adjust Horizontal centering
+
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+
+Should you use Negative margin?
+
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+-   This is a thing.
+
+* * *
+
+### Image
+
+![image](https://placehold.co/800x400/png)
+
+* * *
+
+### Youtube video
+
+* * *
+
+### Custom video
+
+---
+
+## Privacy
+
+URL: https://jayshin04.github.io/privacy-policy
+
+개인정보처리방침
+
+
+# Privacy
+
+TODO: 개인정보처리방침 내용을 작성하세요.
+
+이 페이지는 푸터 메뉴(`src/config/menu.json`)에 연결되어 있습니다. 필요 없다면 이 파일과 메뉴 항목을 함께 지우면 됩니다.
+
+---
+
+## Tags
+
+URL: https://jayshin04.github.io/tags
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# Tags
+
+-   [학습 2](/tags/학습)
+-   [블로그 2](/tags/블로그)
+-   [Todo 2](/tags/todo)
+-   [비밀글 1](/tags/비밀글)
+
+---
+
+## Todo
+
+URL: https://jayshin04.github.io/tags/todo
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# Todo
+
+#### [테스트 글](/blog/test)
+
+-   [JayShin04](/authors/jayshin04)
+-   [블로그](/categories/블로그)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/test)
+
+#### [첫 번째 글](/blog/hello-world)
+
+-   [JayShin04](/authors/jayshin04)
+-   [TODO](/categories/todo)
+-   15 Sep, 2026
+
+TODO: 본문을 작성하세요. 소제목 이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+[read more](/blog/hello-world)
+
+---
+
+## 블로그
+
+URL: https://jayshin04.github.io/tags/블로그
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# 블로그
+
+#### [디지털 포렌식 정리 02](/blog/digital-forensic-02)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   08 Oct, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-02)
+
+#### [디지털 포렌식 정리 01](/blog/digital-forensic-01)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   27 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-01)
+
+---
+
+## 비밀글
+
+URL: https://jayshin04.github.io/tags/비밀글
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# 비밀글
+
+#### [비밀번호로 보호된 글 예시](/blog/protected-example)
+
+-   [JayShin04](/authors/jayshin04)
+-   [보안](/categories/보안)
+-   21 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/protected-example)
+
+---
+
+## 학습
+
+URL: https://jayshin04.github.io/tags/학습
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+
+# 학습
+
+#### [디지털 포렌식 정리 02](/blog/digital-forensic-02)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   08 Oct, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-02)
+
+#### [디지털 포렌식 정리 01](/blog/digital-forensic-01)
+
+-   [JayShin04](/authors/jayshin04)
+-   [학습](/categories/학습)
+-   27 Sep, 2026
+
+🔒 비밀번호로 보호된 글입니다.
+
+[read more](/blog/digital-forensic-01)

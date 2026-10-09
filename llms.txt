@@ -1,0 +1,79 @@
+# JayShin04
+
+> TODO: 블로그 소개 문구를 입력하세요.
+
+This file helps language models discover the most useful content on this site.
+
+## Home
+
+- [제목](https://jayshin04.github.io/index.md): TODO: 블로그 소개 문구를 입력하세요.
+
+
+## About
+
+- [TODO: 자기소개 제목](https://jayshin04.github.io/about.md): TODO: About 페이지 메타 설명을 입력하세요.
+
+
+## Authors
+
+- [Authors](https://jayshin04.github.io/authors.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [JayShin04](https://jayshin04.github.io/authors/jayshin04.md): TODO: 작성자 소개를 입력하세요.
+
+
+## Blog
+
+- [블로그 목록](https://jayshin04.github.io/blog.md): 블로그 글 목록
+
+- [Related Posts](https://jayshin04.github.io/blog/digital-forensic-01.md): 🔒 비밀글입니다.
+
+- [Related Posts](https://jayshin04.github.io/blog/digital-forensic-02.md): 🔒 비밀글입니다.
+
+- [첫 번째 글](https://jayshin04.github.io/blog/hello-world.md): TODO: 글 요약을 입력하세요.
+
+- [Related Posts](https://jayshin04.github.io/blog/protected-example.md): 🔒 비밀글입니다.
+
+- [Related Posts](https://jayshin04.github.io/blog/test.md): 🔒 비밀글입니다.
+
+
+## Categories
+
+- [Categories](https://jayshin04.github.io/categories.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [Todo](https://jayshin04.github.io/categories/todo.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [보안](https://jayshin04.github.io/categories/보안.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [블로그](https://jayshin04.github.io/categories/블로그.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [학습](https://jayshin04.github.io/categories/학습.md): TODO: 블로그 소개 문구를 입력하세요.
+
+
+## Contact
+
+- [Contact](https://jayshin04.github.io/contact.md): 연락처
+
+
+## Elements
+
+- [Elements](https://jayshin04.github.io/elements.md): this is meta description
+
+
+## Privacy-policy
+
+- [Privacy](https://jayshin04.github.io/privacy-policy.md): 개인정보처리방침
+
+
+## Tags
+
+- [Tags](https://jayshin04.github.io/tags.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [Todo](https://jayshin04.github.io/tags/todo.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [블로그](https://jayshin04.github.io/tags/블로그.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [비밀글](https://jayshin04.github.io/tags/비밀글.md): TODO: 블로그 소개 문구를 입력하세요.
+
+- [학습](https://jayshin04.github.io/tags/학습.md): TODO: 블로그 소개 문구를 입력하세요.
+
+
