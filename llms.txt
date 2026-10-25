@@ -1,0 +1,20 @@
+# JayShin04
+
+> TODO: 블로그 소개 문구를 입력하세요.
+
+This file helps language models discover the most useful content on this site.
+
+## Home
+
+- [공부한 것을 기록합니다.](https://jayshin04.github.io/index.md): TODO: 블로그 소개 문구를 입력하세요.
+
+## About
+
+- [신제원 (JayShin04)](https://jayshin04.github.io/about.md): JayShin About
+
+## Blog
+
+- [첫 번째 글](https://jayshin04.github.io/blog/hello-world.md): TODO: 글 요약을 입력하세요.
+- [🔒 비밀글입니다.](https://jayshin04.github.io/blog/protected-example.md): 🔒 비밀글입니다.
+- [🔒 비밀글입니다.](https://jayshin04.github.io/blog/test.md): 🔒 비밀글입니다.
+

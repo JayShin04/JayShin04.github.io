@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <rect width="1200" height="450" fill="#fbf8f2"/>
+  <g fill="none" stroke-width="5">
+    <rect x="120" y="150" width="220" height="150" rx="28" stroke="#2e2b27"/>
+    <rect x="490" y="150" width="220" height="150" rx="28" stroke="#b5653a"/>
+    <rect x="860" y="150" width="220" height="150" rx="28" stroke="#2e2b27"/>
+  </g>
+  <g stroke="#8a8378" stroke-width="4">
+    <line x1="350" y1="225" x2="465" y2="225"/>
+    <line x1="720" y1="225" x2="835" y2="225"/>
+  </g>
+  <g fill="#8a8378">
+    <path d="M480 225 l-18 -11 v22 z"/>
+    <path d="M850 225 l-18 -11 v22 z"/>
+  </g>
+  <circle cx="405" cy="225" r="11" fill="#b5653a"/>
+  <g font-size="30" font-weight="600" text-anchor="middle">
+    <text x="230" y="235" fill="#2e2b27">post.md</text>
+    <text x="600" y="235" fill="#b5653a">astro</text>
+    <text x="970" y="235" fill="#2e2b27">blog</text>
+  </g>
+  <text x="600" y="390" font-size="22" text-anchor="middle" fill="#8a8378">1200 x 450 image, shown at most 920px wide</text>
+</svg>

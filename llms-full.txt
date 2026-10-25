@@ -1,0 +1,81 @@
+# JayShin04
+
+URL: https://jayshin04.github.io
+
+## 공부한 것을 기록합니다.
+
+URL: https://jayshin04.github.io
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+# 공부한 것을 기록합니다.
+
+JayShin04의 학습 기록
+
+## 2026
+
+-   [09.21비밀번호로 보호된 글 예시 🔒보안](/blog/protected-example)
+-   [09.21테스트 글 🔒블로그](/blog/test)
+-   [09.15첫 번째 글TODO](/blog/hello-world)
+
+---
+
+## 신제원 (JayShin04)
+
+URL: https://jayshin04.github.io/about
+
+JayShin About
+
+# 신제원 (JayShin04)
+
+명지대학교 보안 동아리 MJSEC에서 보안을 공부하고 있는 신제원입니다.
+
+## 활동
+
+-   WhiteHat School 4기
+-   Knights Frontier 2기
+
+배우면서 쓰는 글이라 틀린 부분이 있을 수 있어요. 알려 주시면 고치겠습니다.
+
+-   [GitHub](https://github.com/JayShin04)
+-   [Email](mailto:jewon0640@gmail.com)
+
+---
+
+## 첫 번째 글
+
+URL: https://jayshin04.github.io/blog/hello-world
+
+TODO: 글 요약을 입력하세요.
+
+TODO: 본문을 작성하세요.
+
+## 소제목
+
+이 파일은 새 글을 쓸 때 참고할 수 있는 형식 예시입니다. 필요 없으면 지워도 됩니다.
+
+🔗 링크 복사
+
+---
+
+## 🔒 비밀글입니다.
+
+URL: https://jayshin04.github.io/blog/protected-example
+
+🔒 비밀글입니다.
+
+인증 상태 확인 중...
+
+🔗 링크 복사
+
+---
+
+## 🔒 비밀글입니다.
+
+URL: https://jayshin04.github.io/blog/test
+
+🔒 비밀글입니다.
+
+인증 상태 확인 중...
+
+🔗 링크 복사
