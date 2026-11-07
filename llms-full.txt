@@ -1,0 +1,100 @@
+# JayShin04
+
+URL: https://jayshin04.github.io
+
+## 공부한 것을 기록합니다.
+
+URL: https://jayshin04.github.io
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+JayShin04의 학습 기록
+
+# 공부한 것을 **기록합니다.**
+
+명지대 보안 동아리 **MJSEC**에서 디지털 포렌식과 웹 해킹을 공부하며 배운 걸 남겨요.
+
+![](/_astro/char.DLnXmb8j_Z1Sea25.webp)![](/_astro/notes.CMRnMSxZ_Z1estPl.webp)
+
+🔊70
+
+아직 글이 없습니다.
+
+---
+
+## 신제원 (JayShin04)
+
+URL: https://jayshin04.github.io/about
+
+JayShin About
+
+![](/_astro/char.DLnXmb8j_Z1Sea25.webp)
+
+# 신제원 (JayShin04)
+
+JayShin04 · 명지대학교 보안 동아리 MJSEC
+
+명지대학교 보안 동아리 MJSEC에서 보안을 공부하고 있는 신제원입니다.
+
+## 활동
+
+-   WhiteHat School 4기
+-   Knights Frontier 2기
+
+-   [GitHub](https://github.com/JayShin04)
+-   [Email](mailto:jewon0640@gmail.com)
+
+---
+
+## 🔒 비밀글입니다.
+
+URL: https://jayshin04.github.io/blog/digital-forensic-01
+
+🔒 비밀글입니다.
+
+인증 상태 확인 중...
+
+🔗 링크 복사
+
+---
+
+## 🔒 비밀글입니다.
+
+URL: https://jayshin04.github.io/blog/digital-forensic-02
+
+🔒 비밀글입니다.
+
+인증 상태 확인 중...
+
+🔗 링크 복사
+
+---
+
+## 🔒 비밀글입니다.
+
+URL: https://jayshin04.github.io/blog/digital-forensic-03
+
+🔒 비밀글입니다.
+
+인증 상태 확인 중...
+
+🔗 링크 복사
+
+---
+
+## 끄적끄적 카테고리 테스트
+
+URL: https://jayshin04.github.io/blog/test00
+
+TODO: 블로그 소개 문구를 입력하세요.
+
+## 끄적끄적 카테고리란
+
+이 공간은 이제 내가 배운 것을, 내가 개인적으로 쓰듯이 정리하는 공간이다.
+
+기존 글과는 차이점은 딱 한가지의 큰 차이점이다.  
+기존 글을 쓰는 공간은 누군가가 내 글을 본다는 가정하에, 아주 예쁘게, 알기 쉽게 쓸것이고, 여기는 내가 무엇을 배웠는지, 무슨 생각이 들었고, 꼭 보안 공부가 아니더라도 다른것을 적어낸다는 것이 특징적일 것이다.
+
+아마 대부분의 내용들이 비밀번호가 걸려있는 글을 작성하지 않을까 싶다.
+
+🔗 링크 복사

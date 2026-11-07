@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="150" viewBox="0 0 260 150" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <rect width="260" height="150" fill="#efe6d6"/>
+  <circle cx="60" cy="75" r="26" fill="none" stroke="#b5653a" stroke-width="4"/>
+  <text x="60" y="83" font-size="22" font-weight="600" text-anchor="middle" fill="#b5653a">!</text>
+  <text x="104" y="70" font-size="16" fill="#2e2b27">small image</text>
+  <text x="104" y="94" font-size="14" fill="#8a8378">260 x 150</text>
+</svg>
